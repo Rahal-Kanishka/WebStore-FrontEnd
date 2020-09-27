@@ -1,13 +1,6 @@
-App component
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
+<mat-toolbar color="primary">
+  <button mat-raised-button (click)="navigateToPriceCalculator()" style="margin-right: 5px">Price Calculator</button>
+  <button mat-raised-button (click)="navigateToPriceList()">Price List</button>
+</mat-toolbar>
 
 <router-outlet></router-outlet>
