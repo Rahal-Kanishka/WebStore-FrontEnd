@@ -10,30 +10,34 @@
               <mat-icon style="vertical-align: middle">shopping_cart</mat-icon>
             </p>
             <san style="margin-right: 3px">
-              <button mat-mini-fab color="primary" (click)="getPriceDetails(product?.id, product?.orderCount, true)">
+              <button mat-mini-fab color="primary" (click)="getPriceDetails(product?.id, product?.orderCount, true)"
+                      matTooltip="Add">
                 <mat-icon>add</mat-icon>
               </button>
             </san>
             <san>
-              <button mat-mini-fab color="primary" (click)="getPriceDetails(product?.id, product?.orderCount, false)">
+              <button mat-mini-fab color="primary" (click)="getPriceDetails(product?.id, product?.orderCount, false)"
+                      matTooltip="Remove">
                 <mat-icon>remove</mat-icon>
               </button>
             </san>
             <mat-divider style="margin-top: 10px"></mat-divider>
-            <p class="card-text">Cartons
+            <p class="card-text carton-row">Cartons
               <mat-icon style="vertical-align: middle">move_to_inbox</mat-icon>
               (Units: {{product?.cartonCapacity}})
             </p>
             <san style="margin-right: 3px">
               <button mat-mini-fab color="primary"
-                      (click)="addOrRemoveCarton(product?.id,product?.orderCount,product?.cartonCapacity,true)">
+                      (click)="addOrRemoveCarton(product?.id,product?.orderCount,product?.cartonCapacity,true)"
+                      matTooltip="Add">
                 <mat-icon>add</mat-icon>
               </button>
             </san>
             <san>
               <button mat-mini-fab color="primary"
-                     [disabled]="product.orderCount <= 0 || (product.orderCount - product?.cartonCapacity <0)"
-                      (click)="addOrRemoveCarton(product?.id,product?.orderCount,product?.cartonCapacity,false)">
+                      [disabled]="product.orderCount <= 0 || (product.orderCount - product?.cartonCapacity <0)"
+                      (click)="addOrRemoveCarton(product?.id,product?.orderCount,product?.cartonCapacity,false)"
+                      matTooltip="Remove">
                 <mat-icon>remove</mat-icon>
               </button>
             </san>
@@ -44,13 +48,21 @@
   </div>
 
   <div class="row">
-    <div class="col">
-      Total cost : {{totalCost | number : '1.2-2'}}
-    </div>
-    <div class="col">
-      <button mat-mini-fab (click)="resetData()" matTooltip="Reset">
-        <mat-icon>refresh</mat-icon>
-      </button>
+    <div class="alert alert-secondary result-row" role="alert">
+      <div class="alert-heading">
+        <div class="row">
+          <div class="mx-auto">
+            <h3>Total cost : {{totalCost | number : '1.2-2'}} </h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mx-auto">
+            <button mat-mini-fab (click)="resetData()" matTooltip="Reset">
+              <mat-icon>refresh</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
